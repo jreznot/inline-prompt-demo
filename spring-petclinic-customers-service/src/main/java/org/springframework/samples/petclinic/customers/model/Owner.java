@@ -92,6 +92,10 @@ public class Owner {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
     private Set<Pet> pets;
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     protected Set<Pet> getPetsInternal() {
         if (this.pets == null) {
             this.pets = new HashSet<>();
